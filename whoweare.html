@@ -1,333 +1,281 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Beyond the Frame</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      defer
-    ></script>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-  </head>
+  <title>Beyond the Frame</title>
 
-  <body>
-    <header class="hero-banner text-center py-5">
-      <div class="container">
-        <h1 class="display-4">Communities Beyond Borders</h1>
-        <p class="lead">
-          Exploring identity, social practices, and media representation between
-          Canadian and Romanian students.
-        </p>
-        <a href="whoweare.html" class="btn btn-warning mt-3"
-          >Explore Our Identities</a
-        >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="hero-banner text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Voices Across Borders</h1>
+      <p class="lead">
+        Exploring identity, everyday life, and media perspectives from Canada 🇨🇦 to Romania 🇷🇴.
+      </p>
+      <a href="whoweare.html" class="btn btn-warning mt-3">Join the Journey</a>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand site-title d-flex align-items-center" href="index.html">
+        <span class="fw-bold">🇨🇦 ↔ 🇷🇴</span>
+        <span class="ms-2 text-warning small">Voices</span>
+        <img src="images/canada.png" class="flag-icon ms-2" />
+        <img src="images/romania.png" class="flag-icon ms-1" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="whoweare.html">Who We Are</a></li>
+          <li class="nav-item"><a class="nav-link" href="media.html">What Media Says</a></li>
+          <li class="nav-item"><a class="nav-link" href="podcast.html">Podcast</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="references.html">References</a></li>
+        </ul>
       </div>
-    </header>
+    </div>
+  </nav>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container">
-        <a class="navbar-brand site-title" href="index.html"
-          >Beyond the Frame</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="whoweare.html">Who We Are</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="media.html">What Media Says</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="podcast.html">Podcast</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="team.html">Team</a>
-            </li>
-          </ul>
+  <ul class="nav nav-pills justify-content-center mt-5 mb-5" id="countryTabs">
+    <li class="nav-item mx-2">
+      <button class="nav-link active rounded-pill px-4 py-2 shadow-sm" onclick="showCountry('canada', this)">
+        Canada
+      </button>
+    </li>
+    <li class="nav-item mx-2">
+      <button class="nav-link rounded-pill px-4 py-2 shadow-sm" onclick="showCountry('romania', this)">
+        Romania
+      </button>
+    </li>
+  </ul>
+
+  <!-- Canada Who We Are Content -->
+  <div id="canada">
+    <section class="container my-5">
+      <h2 class="text-primary text-center mb-4">Canada: Who We Are</h2>
+
+      <!-- Canada Video -->
+      <div class="info-card mb-5">
+        <div class="ratio ratio-16x9 mb-3">
+          <iframe src="https://www.youtube.com/embed/zm6gHJ3SQIM" title="Canada Fun Facts Video"
+            allowfullscreen></iframe>
         </div>
+        <p class="text-center text-muted">
+          A quick look at Canadian culture, habits, and everyday life.
+        </p>
       </div>
-    </nav>
 
-    <ul class="nav nav-pills justify-content-center mt-5 mb-5" id="countryTabs">
-      <li class="nav-item mx-2">
-        <button
-          class="nav-link active rounded-pill px-4 py-2 shadow-sm"
-          onclick="showCountry('canada', this)"
-        >
-          Canada
-        </button>
-      </li>
-      <li class="nav-item mx-2">
-        <button
-          class="nav-link rounded-pill px-4 py-2 shadow-sm"
-          onclick="showCountry('romania', this)"
-        >
-          Romania
-        </button>
-      </li>
-    </ul>
-
-    <!-- Canada Who We Are Content -->
-    <div id="canada">
+      <!-- Essential Canadian Social Norms Cards -->
       <section class="container my-5">
-        <h2 class="text-primary text-center mb-4">Canada: Who We Are</h2>
-
-        <!-- Canada Video -->
-        <div class="ratio ratio-16x9 mb-4">
-          <iframe
-            src="https://www.youtube.com/embed/zm6gHJ3SQIM"
-            title="Canada Fun Facts Video"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <p class="text-center text-dark mb-5">
-          A fun overview of Canadian culture, social practices, and everyday
-          life.
+        <h3 class="text-primary text-center mb-4">Essential Canadian Social Norms</h3>
+        <p class="text-center text-muted mb-4">
+          Everyday habits and etiquette that reflect Canadian culture and social expectations.
         </p>
 
-        <!-- Canada Fun Facts Accordion -->
-        <section class="container my-5">
-          <h3 class="text-primary text-center mb-4">Canada Fun Facts</h3>
-          <div class="accordion" id="canadaFunFacts">
-            <!-- Globe Image -->
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingGlobe">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseGlobe"
-                  aria-expanded="false"
-                  aria-controls="collapseGlobe"
-                >
-                  Globe Image
-                </button>
-              </h2>
-              <div
-                id="collapseGlobe"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingGlobe"
-                data-bs-parent="#canadaFunFacts"
-              >
-                <div class="accordion-body">
-                  Canadians see themselves as friendly, open, and
-                  community-oriented.
-                </div>
-              </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 p-3 h-100">
+              <h5>Politeness 😊</h5>
+              <p class="text-muted">
+                Say “please,” “thank you,” and “sorry” frequently — it’s part of politeness norms.
+              </p>
             </div>
+          </div>
 
-            <!-- Politeness and Social Behavior -->
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingPoliteness">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapsePoliteness"
-                  aria-expanded="false"
-                  aria-controls="collapsePoliteness"
-                >
-                  Politeness and Social Behavior
-                </button>
-              </h2>
-              <div
-                id="collapsePoliteness"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingPoliteness"
-                data-bs-parent="#canadaFunFacts"
-              >
-                <div class="accordion-body">
-                  Canadians value politeness, personal space, and respectful
-                  manners. This comes from cultural norms like apologizing often
-                  and respecting personal space. These traits get amplified into
-                  a stereotype of “The nicest people in the world.”
-                </div>
-              </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 p-3 h-100">
+              <h5>Punctuality ⏰</h5>
+              <p class="text-muted">
+                Arrive on time for meetings, social gatherings, and appointments.
+              </p>
             </div>
+          </div>
 
-            <!-- Peaceful Country -->
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingPeaceful">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapsePeaceful"
-                  aria-expanded="false"
-                  aria-controls="collapsePeaceful"
-                >
-                  Peaceful Country
-                </button>
-              </h2>
-              <div
-                id="collapsePeaceful"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingPeaceful"
-                data-bs-parent="#canadaFunFacts"
-              >
-                <div class="accordion-body">
-                  Canada is often portrayed as a stable, peaceful country with
-                  low conflict and strong diplomacy. Canadians appearing in
-                  international news are shown as peace-loving individuals who
-                  avoid conflict.
-                </div>
-              </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 p-3 h-100">
+              <h5>Respect Personal Space 🧍‍♂️↔️🧍‍♀️</h5>
+              <p class="text-muted">
+                Respect personal space and always wait your turn in queues.
+              </p>
             </div>
+          </div>
 
-            <!-- Public Healthcare -->
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingHealthcare">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseHealthcare"
-                  aria-expanded="false"
-                  aria-controls="collapseHealthcare"
-                >
-                  Public Healthcare
-                </button>
-              </h2>
-              <div
-                id="collapseHealthcare"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingHealthcare"
-                data-bs-parent="#canadaFunFacts"
-              >
-                <div class="accordion-body">
-                  Most essential medical services in Canada are funded by taxes,
-                  allowing Canadians to see a doctor or hospital without direct
-                  charges. This is a source of national pride as it represents
-                  fairness, equal access, and social responsibility.
-                </div>
-              </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 p-3 h-100">
+              <h5>Host Etiquette 🎁</h5>
+              <p class="text-muted">
+                Bring a small gift to potlucks or when visiting someone’s home; remove outdoor shoes when requested.
+              </p>
             </div>
+          </div>
 
-            <!-- Atlantic Canada -->
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingAtlantic">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseAtlantic"
-                  aria-expanded="false"
-                  aria-controls="collapseAtlantic"
-                >
-                  Atlantic Canada
-                </button>
-              </h2>
-              <div
-                id="collapseAtlantic"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingAtlantic"
-                data-bs-parent="#canadaFunFacts"
-              >
-                <div class="accordion-body">
-                  Atlantic Canada has coastal traditions, fishing heritage, and
-                  strong community bonds.
-                </div>
-              </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 p-3 h-100">
+              <h5>Small Talk 💬</h5>
+              <p class="text-muted">
+                Engage in light small talk on weather, sports, or local events, avoiding overly personal topics
+                initially.
+              </p>
             </div>
+          </div>
 
-            <!-- Seasonal and Outdoor Lifestyle -->
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingSeasonal">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseSeasonal"
-                  aria-expanded="false"
-                  aria-controls="collapseSeasonal"
-                >
-                  Seasonal and Outdoor Lifestyle
-                </button>
-              </h2>
-              <div
-                id="collapseSeasonal"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingSeasonal"
-                data-bs-parent="#canadaFunFacts"
-              >
-                <div class="accordion-body">
-                  Canada's climate shapes habits: winter sports like skating,
-                  hockey, and skiing are part of the identity, while summer
-                  brings camping and outdoor festivals.
-                </div>
-              </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 p-3 h-100">
+              <h5>Public Etiquette 🏙️</h5>
+              <p class="text-muted">
+                Give up seats for elderly or disabled on transit, sort recycling, and keep noise down in shared spaces.
+              </p>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <!-- Food -->
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingFood">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFood"
-                  aria-expanded="false"
-                  aria-controls="collapseFood"
-                >
-                  Food
-                </button>
-              </h2>
-              <div
-                id="collapseFood"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingFood"
-                data-bs-parent="#canadaFunFacts"
-              >
-                <div class="accordion-body">
-                  Classic dishes like poutine, butter tarts, and maple syrup
-                  represent local heritage, while immigrant communities
-                  contribute foods from around the world. This blend of
-                  Indigenous, French, and global cuisine reflects Canada's
-                  diverse identity and openness to cultural exchange.
-                </div>
+      <!-- Canada Fun Facts Accordion -->
+      <div class="info-card">
+        <h3 class="text-primary text-center mb-4">Canada Fun Facts</h3>
+        <div class="accordion" id="canadaFunFacts">
+          <p class="text-center text-muted mb-4">
+            Here are some key traits and everyday practices that shape
+            Canadian identity.
+          </p>
+          <!-- Globe Image -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingGlobe">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseGlobe" aria-expanded="false" aria-controls="collapseGlobe">
+                🌍 Globe Image
+              </button>
+            </h2>
+            <div id="collapseGlobe" class="accordion-collapse collapse" aria-labelledby="headingGlobe"
+              data-bs-parent="#canadaFunFacts">
+              <div class="accordion-body">
+                Canadians see themselves as friendly, open, and
+                community-oriented.
               </div>
             </div>
           </div>
-        </section>
 
-        <h2 class="text-primary text-center mb-4">Are You Ready for Canada?</h2>
+          <!-- Peaceful Country -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingPeaceful">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsePeaceful" aria-expanded="false" aria-controls="collapsePeaceful">
+                ☮️ Peaceful Country
+              </button>
+            </h2>
+            <div id="collapsePeaceful" class="accordion-collapse collapse" aria-labelledby="headingPeaceful"
+              data-bs-parent="#canadaFunFacts">
+              <div class="accordion-body">
+                Canada is often portrayed as a stable, peaceful country with
+                low conflict and strong diplomacy. Canadians appearing in
+                international news are shown as peace-loving individuals who
+                avoid conflict.
+              </div>
+            </div>
+          </div>
+
+          <!-- Public Healthcare -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingHealthcare">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseHealthcare" aria-expanded="false" aria-controls="collapseHealthcare">
+                🏥 Public Healthcare
+              </button>
+            </h2>
+            <div id="collapseHealthcare" class="accordion-collapse collapse" aria-labelledby="headingHealthcare"
+              data-bs-parent="#canadaFunFacts">
+              <div class="accordion-body">
+                Most essential medical services in Canada are funded by taxes,
+                allowing Canadians to see a doctor or hospital without direct
+                charges. This is a source of national pride as it represents
+                fairness, equal access, and social responsibility.
+              </div>
+            </div>
+          </div>
+
+          <!-- Atlantic Canada -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAtlantic">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseAtlantic" aria-expanded="false" aria-controls="collapseAtlantic">
+                🌊 Atlantic Canada
+              </button>
+            </h2>
+            <div id="collapseAtlantic" class="accordion-collapse collapse" aria-labelledby="headingAtlantic"
+              data-bs-parent="#canadaFunFacts">
+              <div class="accordion-body">
+                Atlantic Canada has coastal traditions, fishing heritage, and
+                strong community bonds.
+              </div>
+            </div>
+          </div>
+
+          <!-- Seasonal and Outdoor Lifestyle -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSeasonal">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseSeasonal" aria-expanded="false" aria-controls="collapseSeasonal">
+                🌲Seasonal and Outdoor Lifestyle
+              </button>
+            </h2>
+            <div id="collapseSeasonal" class="accordion-collapse collapse" aria-labelledby="headingSeasonal"
+              data-bs-parent="#canadaFunFacts">
+              <div class="accordion-body">
+                Canada's climate shapes habits: winter sports like skating,
+                hockey, and skiing are part of the identity, while summer
+                brings camping and outdoor festivals.
+              </div>
+            </div>
+          </div>
+
+          <!-- Food -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFood">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFood" aria-expanded="false" aria-controls="collapseFood">
+                🍽️ Food
+              </button>
+            </h2>
+            <div id="collapseFood" class="accordion-collapse collapse" aria-labelledby="headingFood"
+              data-bs-parent="#canadaFunFacts">
+              <div class="accordion-body">
+                Classic dishes like poutine, butter tarts, and maple syrup
+                represent local heritage, while immigrant communities
+                contribute foods from around the world. This blend of
+                Indigenous, French, and global cuisine reflects Canada's
+                diverse identity and openness to cultural exchange.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card mt-5">
+        <h2 class="text-primary text-center mb-4">
+          Are You Ready for Canada?
+        </h2>
         <div id="quiz">
           <!-- Question 1 -->
           <div class="quiz-question" data-question="1">
             <p>
-              <strong
-                >1. Someone holds the door for you. What do you say?</strong
-              >
+              <strong>1. Someone holds the door for you. What do you say?</strong>
             </p>
-            <button
-              class="btn btn-outline-primary d-block mb-2"
-              onclick="checkAnswer(1, 'A', this)"
-            >
+            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(1, 'A', this)">
               A. Nothing
             </button>
-            <button
-              class="btn btn-outline-primary d-block mb-2"
-              onclick="checkAnswer(1, 'B', this)"
-            >
+            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(1, 'B', this)">
               B. Thank you
             </button>
           </div>
@@ -335,21 +283,13 @@
           <!-- Question 2 -->
           <div class="quiz-question" data-question="2" style="display: none">
             <p>
-              <strong
-                >2. You are 10 minutes late to a meeting. What should you
-                do?</strong
-              >
+              <strong>2. You are 10 minutes late to a meeting. What should you
+                do?</strong>
             </p>
-            <button
-              class="btn btn-outline-primary d-block mb-2"
-              onclick="checkAnswer(2, 'A', this)"
-            >
+            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(2, 'A', this)">
               A. Arrive quietly
             </button>
-            <button
-              class="btn btn-outline-primary d-block mb-2"
-              onclick="checkAnswer(2, 'B', this)"
-            >
+            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(2, 'B', this)">
               B. Apologize
             </button>
           </div>
@@ -359,16 +299,10 @@
             <p>
               <strong>3. You are at a restaurant. What is expected?</strong>
             </p>
-            <button
-              class="btn btn-outline-primary d-block mb-2"
-              onclick="checkAnswer(3, 'A', this)"
-            >
+            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(3, 'A', this)">
               A. No tip
             </button>
-            <button
-              class="btn btn-outline-primary d-block mb-2"
-              onclick="checkAnswer(3, 'B', this)"
-            >
+            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(3, 'B', this)">
               B. Leave a tip
             </button>
           </div>
@@ -376,152 +310,171 @@
           <!-- Question 4 -->
           <div class="quiz-question" data-question="4" style="display: none">
             <p>
-              <strong
-                >4. Someone is speaking to you. What shows respect?</strong
-              >
+              <strong>4. Someone is speaking to you. What shows respect?</strong>
             </p>
-            <button
-              class="btn btn-outline-primary d-block mb-2"
-              onclick="checkAnswer(4, 'A', this)"
-            >
+            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(4, 'A', this)">
               A. Looking away
             </button>
-            <button
-              class="btn btn-outline-primary d-block mb-2"
-              onclick="checkAnswer(4, 'B', this)"
-            >
+            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(4, 'B', this)">
               B. Eye contact
             </button>
           </div>
         </div>
-        <!-- References -->
-        <section class="mt-5">
-          <h4 class="text-primary mb-3">References</h4>
-          <ul class="text-dark">
-            <li>
-              <a
-                href="https://www.cbc.ca/news/canada/london/q-a-reflecting-on-what-it-means-to-be-canadian-1.7449808"
-                target="_blank"
-              >
-                CBC: Reflecting on what it means to be Canadian
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://ca.news.yahoo.com/hamilton-mayor-asks-residents-report-134607721.html"
-                target="_blank"
-              >
-                Yahoo News: Hamilton Mayor asks residents to report
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.hamilton.ca/city-council/news-notices/news-releases/residents-come-together-celebrate-hamiltons-diversity-2nd"
-                target="_blank"
-              >
-                Hamilton.ca: Celebrate Hamilton’s diversity
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/watch?v=zm6gHJ3SQIM"
-                target="_blank"
-              >
-                YouTube: Everyday Life in Canada
-              </a>
-            </li>
-          </ul>
-        </section>
-      </section>
-    </div>
+      </div>
+  </div>
 
-    <!-- Romania Reality content -->
-    <div id="romania" style="display: none">
-      <section class="container my-5">
-        <h1 class="text-center mb-4 text-primary">Everyday Life in Romania</h1>
+  <!-- Romania Reality content -->
+  <div id="romania" style="display: none">
+    <section class="container my-5">
+      <h1 class="text-center mb-4 text-primary">Everyday Life in Romania</h1>
 
-        <p class="text-dark mb-5">
-          Romanian students and communities have rich cultural traditions and
-          dynamic modern lifestyles. Daily life balances family, school, work,
-          and social activities, with a strong sense of community.
+      <p class="lead text-dark mb-5">
+        Life in Romania blends deep-rooted traditions with modern energy—where
+        community, culture, and everyday experiences shape identity in
+        meaningful ways.
+      </p>
+
+      <!-- Romania Video -->
+      <div class="info-card mb-5">
+        <div class="ratio ratio-16x9 mb-3">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/rHcbDKz3KhI?si=OWhsCzqlkYe9eyVF"
+            title="Romania Natural Beauty" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="text-center text-muted">
+          Exploring Romania History, Culture, Landmarks, and Traditions
         </p>
+      </div>
 
-        <section class="mb-5">
-          <h2 class="mb-3 text-primary">Education & Student Life</h2>
+      <div class="info-card mb-4">
+        <h4>🎓 Student Life</h4>
+        <p>
+          Romanian students are known for being hardworking and ambitious.
+          Even with challenges like limited resources in some schools,
+          students continue to succeed in competitions and academics. Many
+          schools now blend traditional learning with digital tools and group
+          projects.
+        </p>
+      </div>
+
+      <div class="info-card mb-4">
+        <h4>🏙️ City Life</h4>
+        <p>
+          Romanian cities combine historic charm with modern spaces. Parks,
+          cafés, and festivals bring people together, especially young people
+          who enjoy both tradition and contemporary culture.
+        </p>
+      </div>
+
+      <div class="info-card mb-4">
+        <h4>🤝 Everyday Culture</h4>
+        <p>
+          Family and hospitality are at the heart of Romanian life.
+          Celebrations, traditions, and shared meals create strong social
+          bonds, while modern influences continue to shape how people connect
+          today.
+        </p>
+      </div>
+
+      <section class="mb-5">
+        <h2 class="text-primary text-center mb-4">
+          Community, Culture & Identity in Romania
+        </h2>
+
+        <!-- Intro Card -->
+        <div class="card shadow-sm border-0 p-4 mb-4">
+          <h4 class="text-warning">
+            Community as the Foundation of Cultural Life
+          </h4>
           <p class="text-dark">
-            Romanian students are engaged and hardworking. Schools may face
-            challenges like underfunding or outdated facilities, but teachers
-            are dedicated and students achieve success in national and
-            international competitions. Modern schools often use digital tools,
-            group projects, and extracurricular activities to enhance learning.
+            In Romania, especially in rural areas, community is deeply rooted
+            in shared traditions, mutual support, and collective identity.
+            People are known for their warmth and generosity. Visitors are
+            often welcomed with food, stories, and genuine hospitality.
           </p>
-        </section>
+        </div>
 
-        <section class="mb-5">
-          <h2 class="mb-3 text-primary">Urban Life & Communities</h2>
-          <p class="text-dark">
-            Romanian cities mix historical architecture with modern development.
-            Public spaces, parks, and urban initiatives encourage community
-            engagement. Youth often gather in cafés, cultural centers, or at
-            local festivals, blending tradition with contemporary interests.
-          </p>
-        </section>
+        <!-- Traditions Section -->
+        <h3 class="text-primary mb-4 text-center">
+          Traditions That Continue Today
+        </h3>
 
-        <section class="mb-5">
-          <h2 class="mb-3 text-primary">Social Practices & Traditions</h2>
-          <p class="text-dark">
-            Family and hospitality are central to Romanian culture.
-            Celebrations, local festivals, and religious traditions play an
-            important role in social life. At the same time, modern influences
-            like music, technology, and international trends shape the daily
-            lives of young people.
-          </p>
-        </section>
+        <div class="row g-4">
+          <!-- Tradition 1 -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0 p-3">
+              <h5>🌿 Sorcova</h5>
+              <p class="text-muted">
+                On New Year’s Day, children tap elders with a decorated stick
+                while reciting wishes for health and prosperity. A deeply
+                personal, family-centered tradition.
+              </p>
+            </div>
+          </div>
 
-        <section class="mb-5">
-          <h2 class="mb-3 text-primary">Youth Culture & Hobbies</h2>
-          <p class="text-dark">
-            Romanian youth enjoy sports, arts, music, and social media
-            engagement. They are globally connected yet maintain a sense of
-            local identity, participating in both traditional and modern
-            cultural activities.
-          </p>
-        </section>
+          <!-- Tradition 2 -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0 p-3">
+              <h5>🔔 Plugușorul</h5>
+              <p class="text-muted">
+                Villagers go house to house with bells and symbolic plows,
+                reciting rhymes to bring prosperity for the new year.
+              </p>
+            </div>
+          </div>
 
-        <section class="mb-5">
-          <h2 class="mb-3 text-primary">References</h2>
-          <ul class="text-dark">
-            <li>
-              <a
-                href="https://www.oecd.org/en/publications/education-and-skills-in-romania_594cbb5d-en.html"
-                target="_blank"
-              >
-                OECD: Education in Romania
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.romania-insider.com/society/education"
-                target="_blank"
-              >
-                Romania Insider: Education & Society
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://en.wikipedia.org/wiki/Romanian_culture"
-                target="_blank"
-              >
-                Wikipedia: Romanian Culture
-              </a>
-            </li>
-          </ul>
-        </section>
+          <!-- Tradition 3 -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0 p-3">
+              <h5>🌧️ Paparuda</h5>
+              <p class="text-muted">
+                A rain ritual where girls dressed in greenery dance through
+                villages to invoke rain. A rare tradition blending nature and
+                community.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tradition 4 -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0 p-3">
+              <h5>🎗️ Mărțișor</h5>
+              <p class="text-muted">
+                A red-and-white charm given on March 1st symbolizing spring,
+                protection, and renewal.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
-    </div>
 
-    <footer class="text-center mt-5">
-      <p>COIL Project • Canada – Romania • 2026</p>
-    </footer>
-  </body>
+      <div class="info-card mb-5">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h4>🎧 Youth Culture & Hobbies</h4>
+            <p>
+              Romanian youth are active in sports, arts, music, and digital
+              spaces. They stay globally connected while preserving a strong
+              sense of local identity.
+            </p>
+          </div>
+
+          <div class="col-md-6">
+            <ul class="list-unstyled">
+              <li>⚽ Sports & outdoor activities</li>
+              <li>🎨 Creative arts & expression</li>
+              <li>🎵 Music & festivals</li>
+              <li>📱 Social media & global trends</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <footer class="text-center mt-5">
+    <p>COIL Project • Canada – Romania • 2026</p>
+  </footer>
+</body>
+
 </html>
