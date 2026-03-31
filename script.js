@@ -17,6 +17,8 @@ let score = 0;
 let answered = {};
 
 function checkAnswer(question, answer, button) {
+  console.log("Clicked Q" + question); // 🔍 DEBUG LINE
+
   if (answered[question]) return;
   answered[question] = true;
 
@@ -29,15 +31,16 @@ function checkAnswer(question, answer, button) {
   );
   buttons.forEach((btn) => (btn.disabled = true));
 
+  const currentQuestion = document.querySelector(
+    `.quiz-question[data-question="${question}"]`
+  );
+
   const nextQuestion = document.querySelector(
     `.quiz-question[data-question="${question + 1}"]`
   );
 
   if (nextQuestion) {
-    document.querySelector(
-      `.quiz-question[data-question="${question}"]`
-    ).style.display = "none";
-
+    currentQuestion.style.display = "none";
     nextQuestion.style.display = "block";
   } else {
     showResultBelow();
