@@ -1,34 +1,3 @@
-// Dark Mode Toggle - Fixed Version
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
-
-  function setTheme(theme) {
-    document.documentElement.setAttribute('data-bs-theme', theme);
-    localStorage.setItem('theme', theme);
-    themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
-  }
-
-  // Initialize on page load
-  function initTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      // Respect user's system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
-    }
-  }
-
-  // Toggle on click
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-  });
-
-  // Run when page loads
-  window.addEventListener('DOMContentLoaded', initTheme);
 function showCountry(country, element) {
   const canada = document.querySelector("#canada");
   const romania = document.querySelector("#romania");
