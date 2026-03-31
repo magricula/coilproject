@@ -17,67 +17,7 @@ function showCountry(country, element) {
   element.classList.add("active");
 }
 
-let score = 0;
-let answered = {};
-
-function checkAnswer(question, answer, button) {
-  if (answered[question]) return;
-  answered[question] = true;
-
-  // Count score if correct
-  if (answer === "B") score++;
-
-  // Highlight selected
-  button.classList.add("selected");
-
-  // Disable all buttons for this question
-  const buttons = document.querySelectorAll(
-    `.quiz-question[data-question="${question}"] button`,
-  );
-  buttons.forEach((btn) => (btn.disabled = true));
-
-  // Show next question if exists
-  const nextQuestion = document.querySelector(
-    `.quiz-question[data-question="${question + 1}"]`,
-  );
-  if (nextQuestion) {
-    // Hide current question only if there is a next
-    const currentQuestion = document.querySelector(
-      `.quiz-question[data-question="${question}"]`,
-    );
-    currentQuestion.style.display = "none";
-    nextQuestion.style.display = "block";
-  } else {
-    // Last question, keep it visible and show result below
-    showResultBelow();
-  }
-}
-
-function showResultBelow() {
-  let resultText = "";
-  if (score === 4)
-    resultText = "You're very familiar with Canadian social practices!";
-  else if (score >= 2)
-    resultText =
-      "You're getting there! A bit more learning and you'll fit right in.";
-  else
-    resultText =
-      "Keep exploring Canadian culture — you're just getting started!";
-
-  // Check if result already exists
-  let resultEl = document.getElementById("result");
-  if (!resultEl) {
-    resultEl = document.createElement("h3");
-    resultEl.id = "result";
-    resultEl.className = "mt-4 text-center";
-    const quizDiv = document.getElementById("quiz");
-    quizDiv.appendChild(resultEl);
-  }
-
-  resultEl.innerText = resultText;
-}
-
-// ==================== IMPROVED QUIZ LOGIC ====================
+// ==================== QUIZ LOGIC (Improved Version) ====================
 
 let score = 0;
 let answered = 0;
@@ -95,25 +35,24 @@ function checkAnswer(button) {
 
   answered++;
 
-  // Update score and give feedback
+  // Give feedback and update score
   if (isCorrect) {
     score++;
-    button.classList.add('correct');                    // Green style
+    button.classList.add('correct');
     feedbackDiv.innerHTML = `✅ Excellent! That's a classic Canadian polite gesture!`;
     feedbackDiv.style.color = '#28a745';
   } else {
-    button.classList.add('incorrect');                  // Red style
+    button.classList.add('incorrect');
     feedbackDiv.innerHTML = `❌ Not quite. In Canada, saying "Thank you" is very common when someone holds the door.`;
     feedbackDiv.style.color = '#dc3545';
   }
 
-  // Show feedback
   feedbackDiv.style.display = 'block';
 
-  // Update live score tracker
+  // Update live score
   document.getElementById('current-score').textContent = score;
 
-  // Disable all buttons in this question
+  // Disable buttons
   const allButtons = questionDiv.querySelectorAll('button');
   allButtons.forEach(btn => btn.disabled = true);
 
@@ -124,10 +63,9 @@ function checkAnswer(button) {
       setTimeout(() => {
         questionDiv.style.display = 'none';
         nextQuestion.style.display = 'block';
-      }, 1400);   // Small delay so user can see feedback
+      }, 1400);
     }
   } else {
-    // All questions answered → show final result
     setTimeout(showFinalResult, 1600);
   }
 }
@@ -152,20 +90,4 @@ function showFinalResult() {
   resultText.textContent = `You got ${score} out of ${totalQuestions} correct (${percentage}%)`;
   resultBadge.textContent = badgeText;
   resultDiv.style.display = 'block';
-}
-
-// Keep your existing showCountry function below (don't delete it)
-function showCountry(country, element) {
-  const canada = document.querySelector("#canada");
-  const romania = document.querySelector("#romania");
-
-  canada.style.display = "none";
-  romania.style.display = "none";
-
-  document.querySelector("#" + country).style.display = "block";
-
-  const tabs = document.querySelectorAll("#countryTabs .nav-link");
-  tabs.forEach((tab) => tab.classList.remove("active"));
-
-  element.classList.add("active");
 }
