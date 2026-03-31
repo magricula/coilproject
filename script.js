@@ -1,3 +1,4 @@
+// ==================== COUNTRY TOGGLE ====================
 function showCountry(country, element) {
   const canada = document.querySelector("#canada");
   const romania = document.querySelector("#romania");
@@ -9,7 +10,7 @@ function showCountry(country, element) {
   // Show selected
   document.querySelector("#" + country).style.display = "block";
 
-  // Remove active class
+  // Remove active class from all tabs
   const tabs = document.querySelectorAll("#countryTabs .nav-link");
   tabs.forEach((tab) => tab.classList.remove("active"));
 
@@ -17,14 +18,15 @@ function showCountry(country, element) {
   element.classList.add("active");
 }
 
-// ==================== QUIZ LOGIC (Improved Version) ====================
-
+// ==================== IMPROVED QUIZ LOGIC ====================
 let score = 0;
 let answered = 0;
 const totalQuestions = 4;
 
 function checkAnswer(button) {
   const questionDiv = button.closest('.quiz-question');
+  if (!questionDiv) return;
+
   const questionNumber = parseInt(questionDiv.dataset.question);
   const isCorrect = button.getAttribute('data-correct') === 'true';
   const feedbackDiv = questionDiv.querySelector('.feedback');
@@ -49,10 +51,11 @@ function checkAnswer(button) {
 
   feedbackDiv.style.display = 'block';
 
-  // Update live score
-  document.getElementById('current-score').textContent = score;
+  // Update live score tracker
+  const scoreEl = document.getElementById('current-score');
+  if (scoreEl) scoreEl.textContent = score;
 
-  // Disable buttons
+  // Disable all buttons in this question
   const allButtons = questionDiv.querySelectorAll('button');
   allButtons.forEach(btn => btn.disabled = true);
 
@@ -75,6 +78,8 @@ function showFinalResult() {
   const resultText = document.getElementById('result-text');
   const resultBadge = document.getElementById('result-badge');
   const resultDiv = document.getElementById('quiz-result');
+
+  if (!resultDiv || !resultText || !resultBadge) return;
 
   let badgeText = '';
   if (percentage === 100) {
