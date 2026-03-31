@@ -153,45 +153,71 @@
         </ul>
       </div>
 
-      <!-- Quiz -->
-      <div class="info-card p-4 mx-auto mt-4" style="max-width: 800px;">
-        <h2 class="text-primary text-center mb-4">Are You Ready for Canada?</h2>
-        <div id="quiz">
-          <!-- Question 1 -->
-          <div class="quiz-question" data-question="1">
-            <p><strong>1. Someone holds the door for you. What do you say?</strong></p>
-            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(1, 'A', this)">A. Nothing</button>
-            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(1, 'B', this)">B. Thank
-              you</button>
-          </div>
+      <!-- Improved Interactive Quiz -->
+<div class="info-card p-4 mx-auto mt-4" style="max-width: 800px;">
+  <h2 class="text-primary text-center mb-4">🧠 Are You Ready for Canada?</h2>
+  
+  <!-- Live Score Tracker -->
+  <div id="score-tracker" class="text-center mb-4 fs-5">
+    Score: <strong><span id="current-score">0</span>/4</strong>
+  </div>
 
-          <!-- Question 2 -->
-          <div class="quiz-question" data-question="2" style="display: none">
-            <p><strong>2. You are 10 minutes late to a meeting. What should you do?</strong></p>
-            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(2, 'A', this)">A. Arrive
-              quietly</button>
-            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(2, 'B', this)">B.
-              Apologize</button>
-          </div>
+  <div id="quiz">
+    <!-- Question 1 -->
+    <div class="quiz-question mb-4" data-question="1">
+      <p class="fw-bold">1. Someone holds the door for you. What do you say?</p>
+      <button class="btn btn-outline-primary w-100 text-start mb-2" data-correct="true" onclick="checkAnswer(this)">
+        A. Nothing
+      </button>
+      <button class="btn btn-outline-primary w-100 text-start mb-2" data-correct="false" onclick="checkAnswer(this)">
+        B. Thank you
+      </button>
+      <div class="feedback mt-2" id="feedback1"></div>
+    </div>
 
-          <!-- Question 3 -->
-          <div class="quiz-question" data-question="3" style="display: none">
-            <p><strong>3. You are at a restaurant. What is expected?</strong></p>
-            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(3, 'A', this)">A. No tip</button>
-            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(3, 'B', this)">B. Leave a
-              tip</button>
-          </div>
+    <!-- Question 2 -->
+    <div class="quiz-question mb-4" data-question="2" style="display: none;">
+      <p class="fw-bold">2. You are 10 minutes late to a meeting. What should you do?</p>
+      <button class="btn btn-outline-primary w-100 text-start mb-2" data-correct="false" onclick="checkAnswer(this)">
+        A. Arrive quietly
+      </button>
+      <button class="btn btn-outline-primary w-100 text-start mb-2" data-correct="true" onclick="checkAnswer(this)">
+        B. Apologize
+      </button>
+      <div class="feedback mt-2" id="feedback2"></div>
+    </div>
 
-          <!-- Question 4 -->
-          <div class="quiz-question" data-question="4" style="display: none">
-            <p><strong>4. You see someone speaking to you. What is expected?</strong></p>
-            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(4, 'A', this)">A. Look
-              away</button>
-            <button class="btn btn-outline-primary d-block mb-2" onclick="checkAnswer(4, 'B', this)">B. Make eye
-              contact</button>
-          </div>
-        </div>
-      </div>
+    <!-- Question 3 -->
+    <div class="quiz-question mb-4" data-question="3" style="display: none;">
+      <p class="fw-bold">3. You are at a restaurant. What is expected?</p>
+      <button class="btn btn-outline-primary w-100 text-start mb-2" data-correct="false" onclick="checkAnswer(this)">
+        A. No tip
+      </button>
+      <button class="btn btn-outline-primary w-100 text-start mb-2" data-correct="true" onclick="checkAnswer(this)">
+        B. Leave a 15-20% tip
+      </button>
+      <div class="feedback mt-2" id="feedback3"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-question mb-4" data-question="4" style="display: none;">
+      <p class="fw-bold">4. When someone is speaking to you, what is expected?</p>
+      <button class="btn btn-outline-primary w-100 text-start mb-2" data-correct="false" onclick="checkAnswer(this)">
+        A. Look away
+      </button>
+      <button class="btn btn-outline-primary w-100 text-start mb-2" data-correct="true" onclick="checkAnswer(this)">
+        B. Make eye contact
+      </button>
+      <div class="feedback mt-2" id="feedback4"></div>
+    </div>
+  </div>
+
+  <!-- Final Result Area -->
+  <div id="quiz-result" class="text-center mt-4" style="display: none;">
+    <h3 class="text-primary" id="result-text"></h3>
+    <p class="badge bg-warning fs-5 px-4 py-2 mt-3" id="result-badge"></p>
+  </div>
+</div>
     </section>
   </div>
 
