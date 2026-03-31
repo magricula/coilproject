@@ -44,6 +44,11 @@
           <li class="nav-item"><a class="nav-link" href="podcast.html">Podcast</a></li>
           <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
           <li class="nav-item"><a class="nav-link" href="references.html">References</a></li>
+          <li class="nav-item d-flex align-items-center ms-3">
+            <button id="theme-toggle" class="btn btn-outline-light border-0" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <span id="theme-icon">☀️</span>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -229,3 +234,23 @@
 </body>
 
 </html>
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    localStorage.setItem('theme', theme);
+    themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+  }
+  
+  // Load saved theme or respect system preference
+  const savedTheme = localStorage.getItem('theme') || 
+                     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  setTheme(savedTheme);
+  
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-bs-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+</script>
