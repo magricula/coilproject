@@ -1,3 +1,20 @@
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    localStorage.setItem('theme', theme);
+    themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+  }
+  
+  // Load saved theme or respect system preference
+  const savedTheme = localStorage.getItem('theme') || 
+                     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  setTheme(savedTheme);
+  
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-bs-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
 function showCountry(country, element) {
   const canada = document.querySelector("#canada");
   const romania = document.querySelector("#romania");
