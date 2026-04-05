@@ -42,10 +42,10 @@ ul li a:hover {
   font-size: 1.05rem;
 }
 
-/* Flag icons in navbar */
+/* Flag icons */
 .flag-icon {
-  width: 24px;
-  height: 16px;
+  width: 22px;
+  height: 14px;
   object-fit: cover;
   border-radius: 3px;
 }
@@ -59,7 +59,6 @@ ul li a:hover {
 
 .logo-main {
   color: #0d6efd;
-  /* Bootstrap primary */
   letter-spacing: 1px;
 }
 
@@ -67,15 +66,7 @@ ul li a:hover {
   font-weight: 400;
   font-size: 0.85rem;
   color: #fd7e14;
-  /* Bootstrap warning */
   text-transform: uppercase;
-}
-
-.flag-icon {
-  width: 22px;
-  height: 14px;
-  border-radius: 3px;
-  object-fit: cover;
 }
 
 /* =========================================
@@ -87,22 +78,29 @@ ul li a:hover {
   padding: 60px 20px;
 }
 
+.hero-banner h1,
+.hero-banner p {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
 /* =========================================
    CARDS (GENERAL)
 ========================================= */
 .project-card,
 .info-card,
-.team-card {
-  background: #ffffff;
-  border-radius: 16px;
-}
-
-/* Shared card hover effect */
-.info-card,
 .team-card,
 .podcast-card,
 .card {
+  background: #ffffff;
+  border-radius: 16px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card,
+.team-card,
+.podcast-card {
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .info-card:hover,
@@ -110,24 +108,9 @@ ul li a:hover {
 .podcast-card:hover,
 .card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Specific card tweaks */
-.info-card {
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.team-card {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.podcast-card {
-  border: none;
-  border-radius: 15px;
-}
-
-/* Card content text */
 .card h5 {
   font-weight: 600;
 }
@@ -176,7 +159,6 @@ ul li a:hover {
   margin-bottom: 0;
 }
 
-/* Arrow styling */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.5);
@@ -184,7 +166,6 @@ ul li a:hover {
   padding: 15px;
 }
 
-/* Call-to-Action */
 section.text-center .btn {
   transition: transform 0.2s;
 }
@@ -194,7 +175,7 @@ section.text-center .btn:hover {
 }
 
 /* =========================================
-   COUNTRY TOGGLE (Who We Are / Media pages)
+   COUNTRY TOGGLE
 ========================================= */
 #countryTabs {
   margin: 2rem 0;
@@ -212,6 +193,7 @@ section.text-center .btn:hover {
   background-color: #0d6efd;
   color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 #countryTabs .nav-link.active {
@@ -220,7 +202,7 @@ section.text-center .btn:hover {
 }
 
 /* =========================================
-   QUIZ (Who We Are page)
+   QUIZ
 ========================================= */
 .quiz-question {
   margin-bottom: 20px;
@@ -228,6 +210,7 @@ section.text-center .btn:hover {
 
 .quiz-question button {
   width: 30%;
+  min-width: 120px;
   text-align: left;
   border-radius: 10px;
 }
@@ -239,14 +222,7 @@ section.text-center .btn:hover {
 }
 
 /* =========================================
-   ACCORDION
-========================================= */
-.accordion-button {
-  font-weight: 500;
-}
-
-/* =========================================
-   ROMANIA SECTION STYLING
+   ROMANIA SECTION
 ========================================= */
 #romania section:nth-child(even) {
   background-color: #f8f9fa;
@@ -260,6 +236,14 @@ section.text-center .btn:hover {
 
 .romania-video-card {
   margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+
+  .romania-video-card,
+  .romania-video-title {
+    margin-top: 1.5rem;
+  }
 }
 
 /* =========================================
@@ -297,6 +281,26 @@ audio {
   text-decoration: underline;
 }
 
+/* Back to top */
+.back-to-top-link {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: #1f2a44;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.back-to-top-link:hover {
+  background-color: #f2c94c;
+  color: #1f2a44;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
 /* =========================================
    FOOTER
 ========================================= */
@@ -304,50 +308,4 @@ footer {
   background: #1f2a44;
   color: white;
   padding: 20px;
-}
-/* ==================== COMPARE FLIP CARDS ==================== */
-.flip-card {
-  perspective: 1000px;
-  height: 240px;           /* Fixed height so both sides show properly */
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  border-radius: 16px;
-}
-
-.flip-card.flipped .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 16px;
-  padding: 25px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.flip-card-front {
-  background-color: #ffffff;
-  border: 2px solid #ffc107;
-}
-
-.flip-card-back {
-  background-color: #f8f9fa;
-  border: 2px solid #0d6efd;
-  transform: rotateY(180deg);
 }
